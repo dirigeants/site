@@ -1,0 +1,14 @@
+
+{
+  "extends": ["klasa/eslint-ts", "plugin:vue/essential", "@vue/typescript/recommended"],
+  "env": {
+    "node": true,
+    "browser": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020
+  },
+  "rules": {
+    "new-cap": "off"
+  }
+}
