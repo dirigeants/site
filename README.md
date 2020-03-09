@@ -1,3 +1,4 @@
+![Build & Test](https://github.com/dirigeants/site/workflows/Build%20&%20Test/badge.svg)
 # Site
 Vue website for pb/pr/pg and all utils
 
