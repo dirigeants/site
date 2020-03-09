@@ -12,7 +12,7 @@
 					</span>
 				</router-link>
 
-				<a class="navbar-item is-hidden-desktop" href="https://github.com/klasacommunityplugins" target="_blank">
+				<a class="navbar-item is-hidden-desktop" href="https://github.com/dirigeants" target="_blank">
 					<span class="icon">
 						<i class="fab fa-lg fa-github"></i>
 					</span>
@@ -30,7 +30,7 @@
 					<span class="icon"><i class="fa fa-lg fa-book"></i></span>Docs
 				</router-link>
 
-				<a class="navbar-item is-hidden-touch" href="https://github.com/klasacommunityplugins" target="_blank">
+				<a class="navbar-item is-hidden-touch" href="https://github.com/dirigeants" target="_blank">
 					<span class="icon">
 						<i class="fab fa-lg fa-github"></i>
 					</span>
