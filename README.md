@@ -1,4 +1,5 @@
-# dirigeants-docs
+# Site
+Vue website for pb/pr/pg and all utils
 
 ## Project setup
 ```
