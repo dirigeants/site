@@ -9,6 +9,8 @@
     "ecmaVersion": 2020
   },
   "rules": {
-    "new-cap": "off"
+    "new-cap": "off",
+    "indent": ["error", "tab", { "SwitchCase": 1 }],
+    "no-invalid-this": "off"
   }
 }
