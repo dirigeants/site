@@ -1,4 +1,4 @@
-name: Docs
+name: Site
 
 on:
   push:
@@ -7,8 +7,8 @@ on:
   pull_request:
 
 jobs:
-  Docs:
-    name: Docs
+  Site:
+    name: Site
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Project
@@ -24,9 +24,9 @@ jobs:
           key: ${{ runner.os }}-12-${{ hashFiles('**/yarn.lock') }}
       - name: Install Dependencies
         run: yarn
-      - name: Build documentation
+      - name: Build site
         run: yarn build
-      - name: Publish Docs
+      - name: Publish Site
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: |
           echo -e "\n# Initialise some useful variables"
@@ -41,7 +41,7 @@ jobs:
           echo -e "\n# Checkout the repo in the target branch"
           TARGET_BRANCH="gh-pages"
           git clone $REPO out -b $TARGET_BRANCH
-          echo -e "\n# Move the generated docs to the newly-checked-out repo, to be committed and pushed"
+          echo -e "\n# Move the compiled site to the newly-checked-out repo, to be committed and pushed"
           rsync -vau dist/ out/
           echo -e "\n# Commit and push"
           cd out
