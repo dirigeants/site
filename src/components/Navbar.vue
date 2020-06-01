@@ -18,7 +18,7 @@
 					</span>
 				</a>
 
-				<a class="navbar-item is-hidden-desktop" href="https://discord.gg" target="_blank">
+				<a class="navbar-item is-hidden-desktop" @click="invite()" target="_blank">
 					<span class="icon">
 						<i class="fab fa-lg fa-discord"></i>
 					</span>
