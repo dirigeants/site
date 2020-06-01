@@ -7,8 +7,8 @@ export class DocsSource {
 	public repo: string;
 	public defaultVersion: string;
 	public source: string;
-	public branchFilter: Function;
-	public tagFilter: Function;
+	public branchFilter: (branch: string) => boolean;
+	public tagFilter: (tag: string) => boolean;
 	public versions: string[] | null;
 	public recentVersion: string | null = null;
 
@@ -23,7 +23,7 @@ export class DocsSource {
 		this.versions = options.versions || null;
 	}
 
-	async fetchTags() {
+	async fetchTags(): Promise<unknown[]> {
 		if (this.versions) return this.versions;
 		try {
 			const [branches, tags] = await Promise.all([
@@ -53,7 +53,7 @@ export class DocsSource {
 		}
 	}
 
-	fetchDocs(version: string) {
+	fetchDocs(version: string): Promise<unknown> {
 		return fetch(`https://raw.githubusercontent.com/${this.repo}/docs/${version}.json`).then(json);
 	}
 
@@ -66,7 +66,7 @@ export interface DocsSourceOptions {
 	repo: string;
 	defaultVersion?: string;
 	source?: string;
-	branchFilter?: Function;
-	tagFilter?: Function;
+	branchFilter?: (branch: string) => boolean;
+	tagFilter?: (tag: string) => boolean;
 	versions?: string[];
 }

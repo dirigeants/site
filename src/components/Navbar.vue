@@ -1,5 +1,5 @@
 <template>
-	<nav class="navbar">
+	<nav class="navbar is-info">
 		<div class="container">
 			<div class="navbar-brand">
 				<router-link class="navbar-item is-5" to="/">
@@ -37,7 +37,7 @@
 					<span> Github </span>
 				</a>
 
-				<a class="navbar-item is-hidden-touch" href="https://discord.gg" target="_blank">
+				<a class="navbar-item is-hidden-touch" @click="invite()" target="_blank">
 					<span class="icon">
 						<i class="fab fa-lg fa-discord"></i>
 					</span>
@@ -47,6 +47,23 @@
 		</div>
 	</nav>
 </template>
+
+<script lang="ts">
+import Vue from 'vue';
+import Component from 'vue-class-component';
+import AppC from '../App.vue';
+
+@Component({
+	name: 'Navbar'
+})
+export default class App extends Vue {
+
+	get invite(): () => void {
+		return (this.$parent as AppC).invite;
+	}
+
+}
+</script>
 
 <style lang="scss" scoped>
     .navbar-item {

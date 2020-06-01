@@ -1,3 +1,6 @@
 module.exports = {
-	publicPath: '/site/'
+	publicPath: '/site/',
+	devServer: {
+		host: 'localhost'
+	}
 };

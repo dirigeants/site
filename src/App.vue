@@ -1,6 +1,6 @@
 <template>
 	<div id="app">
-		<section class="hero is-dark shadow">
+		<section class="hero is-info shadow">
 			<div class="hero-head">
 				<navbar/>
 			</div>
@@ -21,7 +21,16 @@ import Navbar from './components/Navbar.vue';
 	name: 'App',
 	components: { Navbar }
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+
+	invite(): void {
+		const popup = window.open('about:blank', '', 'toolbar=no,scrollbars=yes,resizable=yes,width=498,height=666');
+		fetch('https://api.klasa.xyz/invite')
+			.then(res => res.json())
+			.then(({ invite }) => { if (popup) popup.location = invite; });
+	}
+
+}
 </script>
 
 <style lang="scss">

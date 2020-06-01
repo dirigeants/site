@@ -13,10 +13,10 @@ jobs:
     steps:
       - name: Checkout Project
         uses: actions/checkout@v2
-      - name: Install NodeJS v12
+      - name: Install NodeJS v14
         uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 14
       - name: Restore CI Cache
         uses: actions/cache@v1
         with:
@@ -48,7 +48,7 @@ jobs:
           git add --all .
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          git commit -m "Docs build: ${GITHUB_SHA}" || true
+          git commit -m "Vue build: ${GITHUB_SHA}" || true
           git push origin $TARGET_BRANCH
         env:
           GITHUB_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
