@@ -10,6 +10,6 @@ const routes = [{
 	component: Home
 }];
 
-const router = new VueRouter({ routes, base: '/site/' });
+const router = new VueRouter({ routes, mode: 'history' });
 
 export default router;
