@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve --modern",
-    "build": "vue-cli-service build --modern",
+    "serve": "cross-env NODE_ENV=development vue-cli-service serve --modern",
+    "build": "cross-env NODE_ENV=production vue-cli-service build --modern",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -25,6 +25,7 @@
     "@vue/cli-plugin-typescript": "~4.4.1",
     "@vue/cli-service": "~4.4.1",
     "@vue/eslint-config-typescript": "^5.0.2",
+    "cross-env": "^7.0.2",
     "eslint": "^7.1.0",
     "eslint-config-klasa": "dirigeants/klasa-lint",
     "eslint-plugin-vue": "^6.2.2",

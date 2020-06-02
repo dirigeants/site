@@ -46,6 +46,7 @@ jobs:
 
   
           echo -e "\n# Move the compiled site to the newly-checked-out repo, to be committed and pushed"
+          rm -rf out/*
           rsync -vau dist/ out/
           echo -e "\n# Commit and push"
 
