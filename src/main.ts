@@ -1,10 +1,11 @@
 import Vue from 'vue';
 import Buefy from 'buefy';
+import HighlightJS from './utils/highlightJS';
 import App from './App.vue';
 import router from './router';
-import 'buefy/dist/buefy.css';
 
-Vue.use(Buefy);
+Vue.use(HighlightJS);
+Vue.use(Buefy, { defaultIconPack: 'fa' });
 
 Vue.config.productionTip = false;
 
