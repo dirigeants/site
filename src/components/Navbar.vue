@@ -2,8 +2,8 @@
 	<nav class="navbar is-info">
 		<div class="container">
 			<div class="navbar-brand">
-				<router-link class="navbar-item is-5" to="/">
-					<img src="../assets/dirigeants_logo.png" alt="Logo">&nbsp;Dirigeants
+				<router-link id="logo" class="navbar-item is-5 title is-marginless" to="/">
+					<img src="../assets/klasa_logo.svg" alt="Klasa Logo"> &nbsp;Klasa
 				</router-link>
 
 				<router-link class="navbar-item is-hidden-desktop pull-end" to="/docs">
@@ -77,4 +77,10 @@ export default class App extends Vue {
     .pull-end {
         margin-left: auto;
     }
+
+		#logo img {
+				height: 66px;
+				margin: auto;
+				margin-right: 0.25em;
+		}
 </style>
