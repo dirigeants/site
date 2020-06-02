@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from './views/Home.vue';
-import UnknownRoute from './views/UnknownRoute.vue';
+
+const Home = () => import('./views/Home.vue');
+const UnknownRoute = () => import('./views/UnknownRoute.vue');
 
 Vue.use(VueRouter);
 
