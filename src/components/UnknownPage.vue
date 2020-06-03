@@ -1,7 +1,8 @@
 <template>
 	<div class="content">
 		<h1>Unknown {{ type || 'page' }}</h1>
-		<p>This page doesn't actually exist. <b-icon icon="frown" /></p>
+		<p>This page doesn't actually exist.</p>
+		<font-awesome-icon icon="frown" size="6x"/>
 	</div>
 </template>
 

@@ -7,41 +7,32 @@
 				</router-link>
 
 				<router-link class="navbar-item is-hidden-desktop pull-end" to="/docs">
-					<span class="icon">
-						<i class="fa fa-lg fa-book"></i>
-					</span>
+					<font-awesome-icon icon="book" size="lg"/>
 				</router-link>
 
 				<a class="navbar-item is-hidden-desktop" href="https://github.com/dirigeants" target="_blank">
-					<span class="icon">
-						<i class="fab fa-lg fa-github"></i>
-					</span>
+					<font-awesome-icon :icon="['fab', 'github']" size="lg"/>
 				</a>
 
 				<a class="navbar-item is-hidden-desktop" @click="invite()" target="_blank">
-					<span class="icon">
-						<i class="fab fa-lg fa-discord"></i>
-					</span>
+					<font-awesome-icon :icon="['fab', 'discord']" size="lg"/>
 				</a>
 			</div>
 
 			<div class="navbar-end">
 				<router-link class="navbar-item is-hidden-touch" to="/docs">
-					<span class="icon"><i class="fa fa-lg fa-book"></i></span>Docs
+					<font-awesome-icon icon="book" size="lg"/>
+					<span class="nav-item-text"> Docs </span>
 				</router-link>
 
 				<a class="navbar-item is-hidden-touch" href="https://github.com/dirigeants" target="_blank">
-					<span class="icon">
-						<i class="fab fa-lg fa-github"></i>
-					</span>
-					<span> Github </span>
+					<font-awesome-icon :icon="['fab', 'github']" size="lg"/>
+					<span class="nav-item-text"> Github </span>
 				</a>
 
 				<a class="navbar-item is-hidden-touch" @click="invite()" target="_blank">
-					<span class="icon">
-						<i class="fab fa-lg fa-discord"></i>
-					</span>
-					<span> Discord </span>
+					<font-awesome-icon :icon="['fab', 'discord']" size="lg"/>
+					<span class="nav-item-text"> Discord </span>
 				</a>
 			</div>
 		</div>
@@ -66,21 +57,25 @@ export default class App extends Vue {
 </script>
 
 <style lang="scss" scoped>
-    .navbar-item {
-        margin-right: unset;
-        .icon {
-            justify-content: unset;
-            margin-right: 0.15em;
-        }
-    }
+		.navbar-item {
+				margin-right: unset;
+				.icon {
+						justify-content: unset;
+						margin-right: 0.15em;
+				}
+		}
 
-    .pull-end {
-        margin-left: auto;
-    }
+		.pull-end {
+				margin-left: auto;
+		}
 
 		#logo img {
 				height: 66px;
 				margin: auto;
 				margin-right: 0.25em;
+		}
+
+		.nav-item-text {
+			margin-left: 0.35em;
 		}
 </style>
