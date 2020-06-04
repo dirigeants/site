@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="navbar-brand">
 				<router-link id="logo" class="navbar-item is-5 title is-marginless" to="/">
-					<img src="../assets/klasa_logo.svg" alt="Klasa Logo"> &nbsp;Klasa
+					<img rel="prefetch" src="../assets/klasa_logo.svg" alt="Klasa Logo"> &nbsp;Klasa
 				</router-link>
 
 				<router-link class="navbar-item is-hidden-desktop pull-end" to="/docs">
