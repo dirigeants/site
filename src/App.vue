@@ -9,6 +9,8 @@
 		<div class="container">
 			<router-view/>
 		</div>
+
+		<app-footer/>
 	</div>
 </template>
 
@@ -16,10 +18,11 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import Navbar from './components/Navbar.vue';
+import Footer from './components/Footer.vue';
 
 @Component({
 	name: 'App',
-	components: { Navbar }
+	components: { Navbar, AppFooter: Footer }
 })
 export default class App extends Vue {
 
