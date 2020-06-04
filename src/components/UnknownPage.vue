@@ -14,7 +14,7 @@ import Component from 'vue-class-component';
 	name: 'UnknownPage',
 	props: { type: String }
 })
-export default class App extends Vue {}
+export default class UnknownPage extends Vue {}
 </script>
 
 <style lang="scss" scoped>

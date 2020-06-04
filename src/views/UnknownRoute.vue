@@ -17,5 +17,5 @@ import UnknownPage from '../components/UnknownPage.vue';
 	name: 'UnknownRoute',
 	components: { UnknownPage }
 })
-export default class App extends Vue {}
+export default class UnknownRoute extends Vue {}
 </script>

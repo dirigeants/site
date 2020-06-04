@@ -47,7 +47,7 @@ import AppC from '../App.vue';
 @Component({
 	name: 'Navbar'
 })
-export default class App extends Vue {
+export default class Navbar extends Vue {
 
 	get invite(): () => void {
 		return (this.$parent as AppC).invite;
