@@ -10,11 +10,10 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 
-@Component({
-	name: 'UnknownPage',
-	props: { type: String }
-})
-export default class UnknownPage extends Vue {}
+const UnknownPageVue = Vue.extend({ props: { type: String } });
+
+@Component
+export default class UnknownPage extends UnknownPageVue {}
 </script>
 
 <style lang="scss" scoped>
