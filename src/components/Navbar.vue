@@ -6,7 +6,7 @@
 					<img rel="prefetch" src="../assets/klasa_logo.svg" alt="Klasa Logo"> &nbsp;Klasa
 				</router-link>
 
-				<router-link class="navbar-item is-hidden-desktop pull-end" to="/docs">
+				<router-link class="navbar-item is-hidden-desktop pull-right" to="/docs">
 					<font-awesome-icon icon="book" size="lg" pull="left"/>
 				</router-link>
 
@@ -61,10 +61,6 @@ export default class Navbar extends Vue {
 						justify-content: unset;
 						margin-right: 0.15em;
 				}
-		}
-
-		.pull-end {
-				margin-left: auto;
 		}
 
 		#logo img {

@@ -31,9 +31,3 @@ import Component from 'vue-class-component';
 @Component
 export default class DocsNavbar extends Vue {}
 </script>
-
-<style lang="scss" scoped>
-  .pull-right {
-    margin-left: auto;
-  }
-</style>
