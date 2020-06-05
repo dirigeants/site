@@ -44,7 +44,7 @@ import Vue from 'vue';
 import Component from 'vue-class-component';
 import AppC from '../App.vue';
 
-@Component({ name: 'Navbar' })
+@Component
 export default class Navbar extends Vue {
 
 	get invite(): () => void {
