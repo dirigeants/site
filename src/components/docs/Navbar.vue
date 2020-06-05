@@ -2,13 +2,13 @@
 	<nav class="navbar is-light is-radiusless is-paddingless">
 		<div class="container">
 			<div class="navbar-brand">
-        <b-field class="navbar-item">
-            <b-select placeholder="Module">
-                <option>
-                    @klasa/core
-                </option>
-            </b-select>
-        </b-field>
+				<b-field class="navbar-item">
+					<b-select v-model="sourceChoice" :placeholder="source.id">
+						<option v-for="(src, index) in sources" :key="index" :value="src.id">
+							{{ src.name }}
+						</option>
+					</b-select>
+				</b-field>
 
         <div class="navbar-item is-hidden-desktop pull-right">
 					<font-awesome-icon :icon="['fas', 'search']" pull="left"/>
@@ -28,6 +28,8 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 
+const DocsNavbarVue = Vue.extend({ props: ['sources', 'source'] });
+
 @Component
-export default class DocsNavbar extends Vue {}
+export default class DocsNavbar extends DocsNavbarVue {}
 </script>

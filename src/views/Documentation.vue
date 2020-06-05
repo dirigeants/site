@@ -12,8 +12,21 @@ import Component from 'vue-class-component';
 // Components
 import DocsNavbar from '../components/docs/Navbar.vue';
 
+// Sources
+import WSSource from '../data/WSSource';
+
 const DocumentatonVue = Vue.extend({ components: { DocsNavbar } });
 
 @Component
-export default class DocumentationPage extends DocumentatonVue {}
+export default class DocumentationPage extends DocumentatonVue {
+
+	sources = {
+		[WSSource.id]: WSSource
+	}
+
+	source = WSSource;
+
+	version = WSSource.defaultVersion;
+
+}
 </script>
