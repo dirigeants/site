@@ -53,3 +53,10 @@
 		</section>
 	</div>
 </template>
+
+<style lang="scss" scoped>
+.logo {
+	width: 100%;
+	max-width: 400px;
+}
+</style>
