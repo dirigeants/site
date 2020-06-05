@@ -13,9 +13,10 @@ import Component from 'vue-class-component';
 // Components
 import UnknownPage from '../components/UnknownPage.vue';
 
-@Component({
-	name: 'UnknownRoute',
+const UnknownRouteVue = Vue.extend({
 	components: { UnknownPage }
-})
-export default class UnknownRoute extends Vue {}
+});
+
+@Component
+export default class UnknownRoutePage extends UnknownRouteVue {}
 </script>
