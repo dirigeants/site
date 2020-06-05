@@ -36,6 +36,10 @@ import App from '../App.vue';
 @Component
 export default class Footer extends Vue {
 
+	get dark(): boolean {
+		return (this.$parent as App).dark;
+	}
+
 	toggleDark(): void {
 		(this.$parent as App).dark = !(this.$parent as App).dark;
 		localStorage.setItem('dark', String((this.$parent as App).dark));
