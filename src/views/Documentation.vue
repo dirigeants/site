@@ -26,7 +26,7 @@ export default class DocumentationPage extends DocumentatonVue {
 
 	source = WSSource;
 
-	version = WSSource.defaultVersion;
+	tag = WSSource.defaultVersion;
 
 }
 </script>

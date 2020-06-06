@@ -9,7 +9,7 @@ export class DocsSource {
 	public source: string;
 	public branchFilter: (branch: string) => boolean;
 	public tagFilter: (tag: string) => boolean;
-	public versions: string[] | null;
+	public tags!: string[];
 	public recentVersion: string | null = null;
 
 	public constructor(options: DocsSourceOptions) {
@@ -20,28 +20,28 @@ export class DocsSource {
 		this.source = options.source || `https://github.com/${this.repo}/blob/`;
 		this.branchFilter = options.branchFilter || ((branch: string): boolean => branch !== 'master');
 		this.tagFilter = options.tagFilter || (() => true);
-		this.versions = options.versions || null;
+		if (options.tags) this.tags = options.tags;
 	}
 
 	async fetchTags(): Promise<unknown[]> {
-		if (this.versions) return this.versions;
+		if (this.tags) return this.tags;
 		try {
 			const [branches, tags] = await Promise.all([
 				fetch(`https://api.github.com/repos/${this.repo}/branches`).then(json),
 				fetch(`https://api.github.com/repos/${this.repo}/tags`).then(json)
 			]);
 
-			this.versions = [this.defaultVersion];
+			this.tags = [this.defaultVersion];
 			localStorage.setItem(`source-${this.id}`, JSON.stringify({ branches, tags }));
 
 			for (const branch of branches) {
-				if (branch.name !== this.defaultVersion && this.branchFilter(branch.name)) this.versions.push(branch.name);
+				if (branch.name !== this.defaultVersion && this.branchFilter(branch.name)) this.tags.push(branch.name);
 			}
 			for (const tag of tags) {
-				if (tag.name !== this.defaultVersion && this.tagFilter(tag.name)) this.versions.push(tag.name);
+				if (tag.name !== this.defaultVersion && this.tagFilter(tag.name)) this.tags.push(tag.name);
 			}
 
-			return this.versions;
+			return this.tags;
 		} catch (err) {
 			const data = localStorage.getItem(`source-${this.id}`);
 			if (data) {
@@ -68,5 +68,5 @@ export interface DocsSourceOptions {
 	source?: string;
 	branchFilter?: (branch: string) => boolean;
 	tagFilter?: (tag: string) => boolean;
-	versions?: string[];
+	tags?: string[];
 }
