@@ -2,7 +2,7 @@
 # Site
 Vue website for pb/pr/pg and all utils
 
-## Project setup
+# Project setup
 ```
 yarn install
 ```
